@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {Container, Content} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,11 +12,18 @@ const First = () => (
   </Container>
 );
 const Second = () => (
-  <Container>
-    <Content centerContent={true}>
+  <SafeAreaView style={{flex: 1}}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: 'lightblue',
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
       <Text style={{textAlign: 'center'}}>Second</Text>
-    </Content>
-  </Container>
+    </View>
+  </SafeAreaView>
 );
 const Tab = createMaterialBottomTabNavigator();
 export default function BottomTabNavigator() {
